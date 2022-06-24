@@ -13,26 +13,17 @@ test1Section:NewButton("Get BTools", "This button gets you BTools", function()
     Lib.prompt('Hacker information', 'You just got BTools', 2)
 end)
 
-test1Section:NewSlider("PlayerSpeed", "You're walking speed", 500, 16, function(s)
+test1Section:NewSlider("PlayerSpeed", "You're walking speed", 150, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-test1Section:NewSlider("JumpPower", "You're Jump Power", 500, 50, function(s)
+test1Section:NewSlider("JumpPower", "You're Jump Power", 250, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
 local Tab = Window:NewTab("Misc")
 local test1Section = Tab:NewSection("Misc")
-local clickMod = game:GetService("ReplicatedStorage").Events.Click3:FireServer()
 
-test1Section:NewKeybind("ToggleUI", "KeybindInfo", Enum.KeyCode.RightShift, function()
+test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
-end)
-
-test1Section:NewToggle("ToggleText", "ToggleInfo", function(state)
-    if state then
-        print("Toggle On")
-    else
-        print("Toggle Off")
-    end
 end)
