@@ -27,3 +27,11 @@ local test1Section = Tab:NewSection("Misc")
 test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
 end)
+
+test1Section:NewButton("Get Infinite Jumps", "This Button gives you infinite Jumps")
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
