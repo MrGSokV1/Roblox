@@ -33,6 +33,6 @@ end)
 local Tab = Window:NewTab("Misc")
 local test1Section = Tab:NewSection("Misc")
 
-test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.End, function()
+test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
 end)
