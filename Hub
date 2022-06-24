@@ -13,6 +13,15 @@ test1Section:NewButton("Get BTools", "This button gets you BTools", function()
     Lib.prompt('Hacker information', 'You just got BTools', 2)
 end)
 
+
+test1Section:NewButton("Get Infinite Jumps", "This Button gives you infinite Jumps")
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+
 test1Section:NewSlider("PlayerSpeed", "You're walking speed", 150, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
@@ -24,14 +33,6 @@ end)
 local Tab = Window:NewTab("Misc")
 local test1Section = Tab:NewSection("Misc")
 
-test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+test1Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.Z, function()
 	Library:ToggleUI()
-end)
-
-test1Section:NewButton("Get Infinite Jumps", "This Button gives you infinite Jumps")
-local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-	if InfiniteJumpEnabled then
-		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-	end
 end)
